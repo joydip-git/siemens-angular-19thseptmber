@@ -1,1 +1,1 @@
-var peopple = []
+var people = []
