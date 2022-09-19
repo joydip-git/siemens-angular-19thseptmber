@@ -6,7 +6,7 @@ function addPerson(personObj) {
     return false
 }
 function fetchPeople() {
-
+    return people
 }
 function fetchById(id) {
 

@@ -1,4 +1,4 @@
-var addStatus = addPerson(new person('anil', 1, 1000))
+var addStatus = addPerson(new Person('anil', 1, 1000))
 if (addStatus) {
     console.log('added successfully')
     console.log(people)
@@ -6,7 +6,7 @@ if (addStatus) {
 else
     console.log('could not add')
 
-var addStatus = addPerson(new person('sunil', 2, 2000))
+var addStatus = addPerson(new Person('sunil', 2, 2000))
 if (addStatus) {
     console.log('added successfully')
     console.log(people)
