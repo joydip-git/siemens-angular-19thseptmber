@@ -1,0 +1,12 @@
+1. Preparation stage
+	- all declarations are taken care
+2. execution stage
+	-actual execution takes place
+
+hoisting:
+	a. variable
+	b. function
+		function declarations are hoisted, not function expressions
+
+closure: 
+	a lexicla environment of a function
