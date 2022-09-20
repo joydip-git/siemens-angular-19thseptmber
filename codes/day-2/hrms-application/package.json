@@ -1,0 +1,14 @@
+{
+  "name": "hrms-application",
+  "version": "1.0.0",
+  "description": "simple web app",
+  "scripts": {
+    "transpile": "tsc"
+  },
+  "keywords": [],
+  "author": "joydip",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.8.3"
+  }
+}

@@ -1,0 +1,75 @@
+web application development
+
+1. Language
+	- JS
+		- basics of JS
+		- core features
+			callback
+			async
+			objects (constructor function)
+			object binding
+			execution cycle
+				- execution context
+				- hoisting
+			closure
+			prototype based programming
+		- new features
+			- let, const
+			- spread and rest operator
+			- object destructuring
+			- templated string
+			- class, constructor keywords
+			- super and extends keywords
+			- arrow function
+			- ES6 module format: import/export
+	- TS
+
+2. application artifacts
+	- modular 
+		- module
+		- module loader
+		- module format
+	- transpilation
+		- transpilers (babel, tsc)
+	- linters
+	- packaging
+		- webpack
+		- browserify
+
+
+module format:
+	a. module.exports , require('file-path') => common js [ preferrable format in Node JS]
+	b. ES6 module format: export, import
+	c. AMD ( Asynchronous Module Definition) 
+	d. UMD ( Universal Module Definition)
+	e. IIFE
+
+module loader:
+	node js has common js module loader
+	require js
+
+
+
+define('',[], function(){
+
+	function add (a,b){}
+})
+
+
+1. need TS/Highre version of JS code to be converted to older version of vanilla JS
+	a. browser does understand only js
+	b. new features of JS/TS might not be understood by older browser
+	c. my module format needs to be converted into AMD, because requirejs understands onlt that format
+
+
+Node JS installation folder: C:\Program Files\nodejs
+Third party open source packages installed using NPM, bower, yarn etc.: C:\Users\joydip\AppData\Roaming\npm
+
+to create package.json file:
+>npm init
+or
+>npm init --yes
+
+
+
+	

@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "rootDir": "src",
+        "outDir": "dist",
+        "target": "ES5",
+        "module": "AMD",
+        "lib": [
+            "DOM",
+            "ES2015"
+        ],
+        "forceConsistentCasingInFileNames": true,
+        "strict": true
+    }
+}
