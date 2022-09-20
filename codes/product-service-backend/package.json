@@ -1,0 +1,20 @@
+{
+  "name": "product-service-backend",
+  "version": "1.0.0",
+  "description": "RESTful API node server for products",
+  "main": "productAPIserver.js",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.4",
+    "dotenv": "^16.0.1",
+    "express": "^4.16.2",
+    "jsonwebtoken": "^8.5.1",
+    "multer": "^1.3.0"
+  },
+  "scripts": {
+    "start": "node ./src/server.js"
+  },
+  "author": "joydip",
+  "license": "ISC"
+}
