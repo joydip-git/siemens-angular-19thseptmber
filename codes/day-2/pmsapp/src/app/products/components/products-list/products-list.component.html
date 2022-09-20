@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="table-responsive">
+        <table class="table" *ngIf="productsData && productsData.length>0;else alternate">
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Rating</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let p of productsData">
+                    <td>
+                        <div class="img-responsive">
+                            <img [src]="p.imageUrl" alt="NA" class="imgStyle" [title]="p.productName">
+                        </div>
+                    </td>
+                    <td>{{p.productName|uppercase}}</td>
+                    <td>{{p.price|currency:'INR'}}</td>
+                    <td>{{p.starRating}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
+<ng-template #alternate>
+    <span>No records found</span>
+</ng-template>

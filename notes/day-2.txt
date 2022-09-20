@@ -71,5 +71,35 @@ or
 >npm init --yes
 
 
+Angular features:
+	data binding: technique to supply data of component code to the component design
+			a. interpolation {{ data }}
+			b. property binidng
+	event binding: technique to supply data from component design to the component code
+
+	code: 
+	method(arg){}
+
+	design:
+	<HTML-tag (event-name)="method(value)"/>
+
+
+template reference variable: (#something)
+	<element #something/>
+	#something => refers the input type object in DOM
+
+https://bootswatch.com/ (for free themes)
+navbar in app.component.html => lux theme (click on peview=> copy the navbar design)
+
+
+
+
+
+
+
+
+
+
+
 
 	
