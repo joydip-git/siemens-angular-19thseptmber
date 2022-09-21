@@ -46,6 +46,23 @@
 
 	try to configure routes at every feature module level
 
+7. component life-cycle:
+	a. mounting:
+		1. ctor called
+		2. change detection takes place
+		3. changes event take place
+		4. init event takes place
+
+
+	b. updation:
+		1. change detection takes place
+		2. changes event take place
+
+	c. destruction
+		destoy event gets fired
+
+8. service: class with reusable piece of code (methods) and is used from a component, dircetive, pipe, module, or even other services
+
 
 
 

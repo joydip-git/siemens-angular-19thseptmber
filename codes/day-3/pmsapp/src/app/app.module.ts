@@ -7,6 +7,7 @@ import { DashboardComponent } from './common/dashboard/dashboard.component';
 import { HomeComponent } from './common/home/home.component';
 import { PageNotFoundComponent } from './common/page-not-found/page-not-found.component';
 import { AppRoutingModule } from './app-routing.module';
+import { ProductsService } from './products/services/products.service';
 
 
 @NgModule({
@@ -21,7 +22,7 @@ import { AppRoutingModule } from './app-routing.module';
     ProductsModule,
     AppRoutingModule
   ],
-  providers: [],
+  //providers: [ProductsService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
