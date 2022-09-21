@@ -1,0 +1,78 @@
+<!-- 
+Add Form
+<input type="text" [(ngModel)]="data" #valtxt="ngModel" />
+<br>
+<span>{{data}}</span>
+<button (click)="submit(valtxt)">Submit</button> -->
+
+<div class="row">
+    <div class="col-10">
+        <div class="border p-3 mt-4 row">
+            <form ngForm #frm="ngForm" (ngSubmit)="submit(frm)">
+                <div class="col-12 pb-2">
+                    <h2 class="text-primary">Create Product</h2>
+                    <hr />
+                </div>
+                <!--id-->
+                <div class="mb-3 col-6">
+                    <label for="productName"></label>
+                    <input class="form-control" type="number" ngModel name="productId" placeholder="enter id here" />
+                </div>
+
+                <!--Name-->
+                <div class="mb-3">
+                    <label for="productName"></label>
+                    <input class="form-control" name="productName" placeholder="enter name" ngModel />
+                </div>
+
+                <!--Description-->
+                <div class="mb-3">
+                    <label for="description"></label>
+                    <textarea class="form-control" rows="3" name="description" placeholder="enter description here"
+                        ngModel></textarea>
+                </div>
+
+                <!--Code-->
+                <div class="mb-3 col-6">
+                    <label for="productCode"></label>
+                    <input class="form-control" name="productCode" placeholder="enter productCode here" ngModel />
+                </div>
+
+                <!--Price-->
+                <div class="mb-3 col-6">
+                    <label for="price"></label>
+                    <input class="form-control" type="number" name="price" placeholder="enter price here" ngModel />
+                </div>
+                <!--realese date-->
+                <div class="mb-3">
+                    <label for="releaseDate"></label>
+                    <input class="form-control" name="releaseDate" placeholder="enter releaseDate here" type="date"
+                        ngModel />
+                </div>
+
+                <!--Rating-->
+                <div class="mb-3 col-6">
+                    <label for="starRating"></label>
+                    <input class="form-control" name="starRating" ngModel placeholder="enter starRating here"
+                        type="number" />
+                </div>
+
+                <!--ImageURL-->
+                <div class="mb-3">
+                    <label for="imageUrl"></label>
+                    <input class="form-control" name="imageUrl" placeholder="enter imageUrl here" ngModel />
+                </div>
+
+
+
+                <div class="col-12">
+                    <input type="submit" class="btn btn-primary" style="width:150px" value="Create" />
+                    &nbsp;&nbsp;
+                    <a class="btn btn-secondary" style="width:150px" routerLink="/products">
+                        Back To Products
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

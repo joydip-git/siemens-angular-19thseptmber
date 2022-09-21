@@ -9,11 +9,13 @@
 </ng-template>
 <div class="container" *ngIf="!loading;else load">
     <div class="row">
-        <form class="d-flex">
+        <!-- <form class="d-flex">
             Filter By:&nbsp;<input class="form-control me-sm-6" type="text" placeholder="Search" [value]="searchText"
                 (change)="updateSearchText(search.value)" #search>
-            <!-- <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button> -->
-        </form>
+        </form> -->
+
+        Filter By:&nbsp;<input class="form-control me-sm-6" type="text" placeholder="Search" [(ngModel)]="searchText">
+
     </div>
     <br>
     <div class="table-responsive" *ngIf="errorMessage === '';else error">
