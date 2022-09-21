@@ -4,6 +4,7 @@ import { ProductsListComponent } from './components/products-list/products-list.
 import { ProductsRoutingModule } from './products-routing.module';
 import { ProductsService } from './services/products.service';
 import { PRODUCTS_SERVICE } from 'src/utils/appconstants';
+import { HttpClientModule } from "@angular/common/http";
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { PRODUCTS_SERVICE } from 'src/utils/appconstants';
   ],
   imports: [
     CommonModule,
-    ProductsRoutingModule
+    ProductsRoutingModule,
+    HttpClientModule
   ],
   exports: [ProductsListComponent],
   //providers: [ProductsService]

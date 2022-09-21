@@ -63,6 +63,22 @@
 
 8. service: class with reusable piece of code (methods) and is used from a component, dircetive, pipe, module, or even other services
 
+9. data fetching and making RESTful API requests:
+	HttpClient => service class (built-in)
+	module: HttpClientModule
+
+{
+	message:'',
+	data:[{ "productName:"dell xps""},{}]
+}
+
+=> 
+ApiResponseModel
+	message:'',
+	data:[{ productName:'dell xps'},{}]
+
+
+
 
 
 

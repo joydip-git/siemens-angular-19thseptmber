@@ -1,32 +1,51 @@
-import { Injectable } from "@angular/core";
-import { products } from "src/data/products";
+import { Injectable, INJECTOR } from "@angular/core";
 import { IAppService } from "src/models/appservice.contract";
 import { Product } from "src/models/product.model";
+import { HttpClient } from "@angular/common/http";
+import { ApiResponse } from "src/models/apiresponse.model";
+import { catchError, map, Observable } from "rxjs";
 
 // @Injectable({
 //     //register at the root level
 //     providedIn: 'root'
 // })
+@Injectable()
 export class ProductsService implements IAppService<Product>{
 
-    constructor() {
+    private productsApiUrl = 'http://127.0.0.1:3003/products'
+    constructor(private http: HttpClient) {
         console.log('products service created')
-
     }
-    fethAll(): Product[] | undefined | null {
-        return [...products]
+    add(obj: Product): Observable<ApiResponse<Product[]>> | null | undefined {
+        return this.http.post<ApiResponse<Product[]>>(this.productsApiUrl, obj)
     }
-    fetchById(id: number): Product | undefined | null {
-        return null;
+    update(obj: Product): Observable<ApiResponse<Product[]>> | null | undefined {
+        return this.http.put<ApiResponse<Product[]>>(this.productsApiUrl, obj)
     }
-    add(obj: Product): boolean {
-        return false
+    delete(id: number): Observable<ApiResponse<Product[]>> | null | undefined {
+        return this.http.delete<ApiResponse<Product[]>>(`${this.productsApiUrl}/${id}`)
     }
-    update(obj: Product): boolean {
-        return false
+    fethAll(): Observable<ApiResponse<Product[]>> | undefined | null {
+        //return [...products]
+        return this.http.get<ApiResponse<Product[]>>(this.productsApiUrl)
+        /*
+        const obsResp: Observable<Object> = this.http.get(this.productsApiUrl)
+        const obsProducts: Observable<ApiResponse<Product[]>> = obsResp.pipe(
+            map(
+                function (resp) {
+                    return <ApiResponse<Product[]>>resp
+                }
+            ),
+            catchError(
+                function (e, resp) {
+                    console.log(e)
+                    return resp;
+                }
+            )
+        )
+        */
     }
-    delete(id: number): boolean {
-        return false
+    fetchById(id: number): Observable<ApiResponse<Product | null>> | undefined | null {
+        return this.http.get<ApiResponse<Product>>(`${this.productsApiUrl}/${id}`)
     }
-
 }
