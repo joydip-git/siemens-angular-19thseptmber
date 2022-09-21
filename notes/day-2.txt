@@ -92,6 +92,28 @@ https://bootswatch.com/ (for free themes)
 navbar in app.component.html => lux theme (click on peview=> copy the navbar design)
 
 
+Routing:
+---------------------
+path
+products 		=> PL
+products/{id}		=> PD
+products/add    	=> AP
+products/update/{id} 	=> UP
+
+home		=> Home
+*		=> PNF
+
+
+@angular/router
+
+classes: Route, Routes
+directive: routerLink, router-outlet
+service: Router, ActivatedRoute, RouterState, ActivatedRouteSnapshot
+module: RouterModule
+
+
+
+
 
 
 
