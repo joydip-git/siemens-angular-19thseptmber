@@ -1,1 +1,93 @@
-<p>update-product works!</p>
+<!-- 
+Add Form
+<input type="text" [(ngModel)]="data" #valtxt="ngModel" />
+<br>
+<span>{{data}}</span>
+<button (click)="submit(valtxt)">Submit</button> -->
+<!-- <input type="text" [formControl]="username" /> -->
+
+<ng-template #load>
+    <span>Loading...plaese wait</span>
+</ng-template>
+<ng-template #error>
+    <span>{{errorMessage}}</span>
+</ng-template>
+<ng-template #alternate>
+    <span>No record found</span>
+</ng-template>
+<div class="row" *ngIf="!loading;else load">
+    <div class="col-10" *ngIf="errorMessage === '';else error">
+        <div class="border p-3 mt-4 row" *ngIf="product;else alternate">
+            <form *ngIf="updateFrm" [formGroup]="updateFrm" (submit)="submit()">
+                <div class="col-12 pb-2">
+                    <h2 class="text-primary">Update Product</h2>
+                    <hr />
+                </div>
+                <!--id-->
+                <div class="mb-3 col-6">
+                    <label for="productId"></label>
+                    <input class="form-control" type="number" name="productId" placeholder="enter id here"
+                        formControlName="productId" readonly />
+                </div>
+
+                <!--Name-->
+                <div class="mb-3">
+                    <label for="productName"></label>
+                    <input class="form-control" name="productName" placeholder="enter name"
+                        formControlName="productName" />
+                </div>
+
+                <!--Description-->
+                <div class="mb-3">
+                    <label for="description"></label>
+                    <textarea class="form-control" rows="3" name="description" placeholder="enter description here"
+                        formControlName="description"></textarea>
+                </div>
+
+                <!--Code-->
+                <div class="mb-3 col-6">
+                    <label for="productCode"></label>
+                    <input class="form-control" name="productCode" placeholder="enter productCode here"
+                        formControlName="productCode" />
+                </div>
+
+                <!--Price-->
+                <div class="mb-3 col-6">
+                    <label for="price"></label>
+                    <input class="form-control" type="number" name="price" placeholder="enter price here"
+                        formControlName="price" />
+                </div>
+                <!--realese date-->
+                <div class="mb-3">
+                    <label for="releaseDate"></label>
+                    <input class="form-control" name="releaseDate" placeholder="enter releaseDate here" type="date"
+                        formControlName="releaseDate" />
+                </div>
+
+                <!--Rating-->
+                <div class="mb-3 col-6">
+                    <label for="starRating"></label>
+                    <input class="form-control" name="starRating" placeholder="enter starRating here" type="number"
+                        formControlName="starRating" />
+                </div>
+
+                <!--ImageURL-->
+                <div class="mb-3">
+                    <label for="imageUrl"></label>
+                    <input class="form-control" name="imageUrl" placeholder="enter imageUrl here"
+                        formControlName="imageUrl" />
+                </div>
+
+
+
+                <div class="col-12">
+                    <input type="submit" class="btn btn-primary" style="width:150px" value="Create" />
+                    &nbsp;&nbsp;
+                    <a class="btn btn-secondary" style="width:150px" routerLink="/products">
+                        Back To Products
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

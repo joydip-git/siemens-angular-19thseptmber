@@ -8,7 +8,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { environment } from 'src/environments/environment';
 import { ProductFilterPipe } from './pipes/product-filter.pipe';
 import { AddProductComponent } from './components/add-product/add-product.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UpdateProductComponent } from './components/update-product/update-product.component';
 
 
@@ -19,6 +19,7 @@ import { UpdateProductComponent } from './components/update-product/update-produ
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     ProductsRoutingModule,
     HttpClientModule
   ],

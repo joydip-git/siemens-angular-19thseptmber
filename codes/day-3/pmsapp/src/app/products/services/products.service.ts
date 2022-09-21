@@ -21,7 +21,7 @@ export class ProductsService implements IAppService<Product>{
         return this.http.post<ApiResponse<Product[]>>(this.productsApiUrl, obj)
     }
     update(obj: Product): Observable<ApiResponse<Product[]>> | null | undefined {
-        return this.http.put<ApiResponse<Product[]>>(this.productsApiUrl, obj)
+        return this.http.put<ApiResponse<Product[]>>(`${this.productsApiUrl}/${obj.productId}`, obj)
     }
     delete(id: number): Observable<ApiResponse<Product[]>> | null | undefined {
         return this.http.delete<ApiResponse<Product[]>>(`${this.productsApiUrl}/${id}`)
