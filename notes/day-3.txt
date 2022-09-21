@@ -78,6 +78,21 @@ ApiResponseModel
 	data:[{ productName:'dell xps'},{}]
 
 
+Pipe:
+	create class
+	implement transform method of PipeTransform interface from @angular/core package
+	decorate the class with @Pipe() decorator from @angular/core package
+	in the @Pipe decorator assign the name of the pipe
+	@Pipe({
+    		name: 'filterproduct'
+	})
+	export class ProductFilterPipe implements PipeTransform {
+	    transform(value: Product[], ...args: string[]): Product[]  {
+        		//code
+	}
+	}
+
+
 
 
 

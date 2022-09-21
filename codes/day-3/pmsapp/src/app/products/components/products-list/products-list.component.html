@@ -1,5 +1,22 @@
-<div class="container">
-    <div class="table-responsive">
+<ng-template #load>
+    <span>Loading...plaese wait</span>
+</ng-template>
+<ng-template #error>
+    <span>{{errorMessage}}</span>
+</ng-template>
+<ng-template #alternate>
+    <span>No records found</span>
+</ng-template>
+<div class="container" *ngIf="!loading;else load">
+    <div class="row">
+        <form class="d-flex">
+            Filter By:&nbsp;<input class="form-control me-sm-6" type="text" placeholder="Search" [value]="searchText"
+                (change)="updateSearchText(search.value)" #search>
+            <!-- <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button> -->
+        </form>
+    </div>
+    <br>
+    <div class="table-responsive" *ngIf="errorMessage === '';else error">
         <table class="table" *ngIf="productsData && productsData.length>0;else alternate">
             <thead>
                 <tr>
@@ -10,7 +27,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let p of productsData">
+                <tr *ngFor="let p of productsData|filterproduct:searchText">
                     <td>
                         <div class="img-responsive">
                             <img [src]="p.imageUrl" alt="NA" class="imgStyle" [title]="p.productName">
@@ -25,6 +42,3 @@
 
     </div>
 </div>
-<ng-template #alternate>
-    <span>No records found</span>
-</ng-template>
