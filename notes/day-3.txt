@@ -1,0 +1,52 @@
+1. data binding: interpolation and property binding
+2. directives: 
+	types:
+		a. structural: *ngFor, *ngIf, *ngIfElse
+		b. attribute: routerLink
+		c. component: has view (design)
+3. modules: 
+	creating feature modules
+	registering feature module with root module
+	using exports in NgModule to export the assets of one module to another
+	decorator: @NgModule({.....})
+		properties:
+			a. declarations
+			b. imports
+			c. exports
+			d. providers
+			e. bootstrap
+4. components:
+	types of components
+		a. nested
+		b. routed
+	decorator: @Component({....})
+		properties:
+			a. selector
+			b. templateUrl		
+			c. styleUrls
+
+5. main.ts
+	platformBrowserDynaimc() method from @angular/platform-brower-dynamic package => created PlatformRef object
+	bootstrapModule() method of PlatformRef bootstraps the root module
+
+6. Routing (Part-1)
+	how to create routes
+		Route => represents every route definition
+		Routes => is an array of Route (Routes - Route[])
+	how to register the routes
+		RouterModule.forRoot(....)
+
+	code segregation:
+		create a separate module file for routing configuration
+		name: <actual-module-name>-routing.module.ts
+		import RouterModule
+		register the routes using forRoot/forChild method
+		re-export the RouterModule
+		regsiter the routing module with main module
+
+	try to configure routes at every feature module level
+
+
+
+
+	

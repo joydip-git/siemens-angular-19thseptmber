@@ -1,0 +1,52 @@
+app.component.html
+<h2>
+    {{appTitle}}
+</h2>
+Value:&nbsp;
+<input type="text" value="{{nameValue}}" #txt [style.width.px]="width" [style.margin.px]="margin"
+    placeholder="enter name here" (change)="passData(txt.value)" />
+<br />
+<span>Your name is: {{nameValue}}</span>
+<br />
+<!-- <button (click)="passData(txt.value)">Pass Data</button> -->
+
+app.component.ts
+import { Component } from '@angular/core'
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  appTitle = 'Product Management System'
+  nameValue = ''
+
+  margin = 30
+  width = 400
+
+
+  passData(data: string) {
+    this.nameValue = data
+  }
+}
+
+
+ProductsModule code:
+import { NgModule } from "@angular/core";
+
+@NgModule({
+    //registry for components, directives, pipes
+    declarations: [],
+    //registry for service
+    providers: [],
+    //registry for modules (built-in and/or user-defined)
+    imports: [],
+    //mention the name of rsgistered components, directives, pipes, modules (NOT SERVICES) of this module to be expor6ted out of this module
+    exports: [],
+    //mention the name of the components from this module, to be bootsrapped when the application starts up and this module gets loaded
+    bootstrap: []
+})
+export class ProductsModule {
+
+}
